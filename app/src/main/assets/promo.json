@@ -1,0 +1,6 @@
+[
+  { "title": "Diskon Ongkir 50%", "description": "Berlaku untuk semua menu makanan berat hari ini.", "discount": "50%" },
+  { "title": "Beli 2 Gratis 1", "description": "Khusus kategori camilan, berlaku sampai akhir minggu.", "discount": "B2G1" },
+  { "title": "Cashback 10rb", "description": "Minimal transaksi Rp30.000 pakai FoodMate Pay.", "discount": "10K" },
+  { "title": "Menu Baru: Sate Madura", "description": "Coba menu terbaru kami, rating 4.9 dari pelanggan.", "discount": "NEW" }
+]
