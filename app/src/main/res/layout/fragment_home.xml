@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,15 +18,74 @@
             android:padding="20dp"
             android:layout_marginBottom="16dp">
 
+            <!-- Baris Lokasi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lokasi Pengiriman"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:alpha="0.85" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="2dp">
+
+                        <TextView
+                            android:id="@+id/tvLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jl. Sudirman No.1, Jakarta"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@android:drawable/arrow_down_float"
+                            app:tint="@color/white" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivNotification"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_notification"
+                    app:tint="@color/white"
+                    android:contentDescription="Notifikasi" />
+            </LinearLayout>
+
+            <!-- Greeting -->
             <TextView
                 android:id="@+id/tvGreeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hi, User! 👋"
+                android:text="Hi, Foodie! 👋"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:fontFamily="@font/poppins" />
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="16dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,6 +95,40 @@
                 android:textColor="@color/white"
                 android:layout_marginTop="4dp" />
 
+            <!-- Search Bar -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/ic_menu_search"
+                        app:tint="@color/grey" />
+
+                    <EditText
+                        android:id="@+id/etSearchHome"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:background="@android:color/transparent"
+                        android:hint="Cari makanan atau restoran..."
+                        android:textSize="14sp"
+                        android:singleLine="true" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
         <LinearLayout
@@ -43,20 +137,49 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="🎁 Promo Spesial"
+            <!-- Kategori -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:fontFamily="@font/poppins"/>
-
-            <TextView android:id="@+id/tvPromoLoading" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Memuat promo..." android:layout_marginTop="4dp" android:visibility="gone" />
+                android:fontFamily="@font/poppins" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvPromo" android:layout_width="match_parent" android:layout_height="120dp"
-                android:layout_marginTop="8dp" android:orientation="horizontal" />
+                android:id="@+id/rvCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" />
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Promo Spesial"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/tvPromoLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Memuat promo..."
+                android:layout_marginTop="4dp"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPromo"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="🔥 Menu Populer"
                 android:textStyle="bold"
                 android:textSize="18sp"
@@ -64,8 +187,11 @@
                 android:layout_marginTop="20dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvPopular" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" android:nestedScrollingEnabled="false" />
+                android:id="@+id/rvPopular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
 
         </LinearLayout>
 

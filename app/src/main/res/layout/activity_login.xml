@@ -1,57 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center">
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/logo_foodmate"
-        android:scaleType="centerInside"
-        android:layout_marginBottom="20dp"
-        android:contentDescription="Logo FoodMate" />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/background">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Masuk ke FoodMate"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/poppins"
-        android:layout_marginBottom="24dp" />
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center"
+            android:background="@color/primary" android:padding="32dp">
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:layout_marginTop="12dp" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="90dp" android:layout_height="90dp"
+                android:src="@drawable/logo_foodmate"
+                android:scaleType="centerCrop"
+                android:background="@android:color/white"
+                app:shapeAppearanceOverlay="@style/RoundedImageStyle" />
 
-    <TextView
-        android:id="@+id/tvError"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email dan password wajib diisi"
-        android:textColor="#FF0000"
-        android:visibility="gone"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="FoodMate"
+                android:textSize="22sp" android:textStyle="bold" android:textColor="@color/white"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="12dp" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Masuk"
-        android:backgroundTint="@color/primary"
-        android:layout_marginTop="20dp" />
-</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Your Best Dining Partner"
+                android:textSize="12sp" android:textColor="@color/white"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <!-- Card berisi Tab + Form -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:layout_marginHorizontal="0dp"
+            app:cardCornerRadius="24dp" app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="24dp">
+
+                <!-- Tab Masuk / Daftar -->
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/background"
+                    android:layout_marginBottom="20dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTabLogin"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Masuk"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/white"
+                        android:textColor="@color/black"
+                        app:cornerRadius="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTabRegister"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Daftar"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/background"
+                        android:textColor="@color/grey"
+                        app:cornerRadius="8dp" />
+                </LinearLayout>
+
+                <!-- FORM LOGIN -->
+                <LinearLayout
+                    android:id="@+id/formLogin"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText android:id="@+id/etEmail" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Email" android:inputType="textEmailAddress" />
+
+                    <EditText android:id="@+id/etPassword" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Password" android:inputType="textPassword" android:layout_marginTop="12dp" />
+
+                    <TextView android:id="@+id/tvError" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Email dan password wajib diisi" android:textColor="#FF0000"
+                        android:visibility="gone" android:layout_marginTop="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLogin" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="MASUK" app:backgroundTint="@color/primary" android:layout_marginTop="20dp" />
+                </LinearLayout>
+
+                <!-- FORM DAFTAR -->
+                <LinearLayout
+                    android:id="@+id/formRegister"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Nama Lengkap" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/grey" />
+                    <EditText android:id="@+id/etRegName" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Nama lengkap Anda" android:inputType="textPersonName" android:layout_marginTop="4dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Email" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/grey"
+                        android:layout_marginTop="14dp" />
+                    <EditText android:id="@+id/etRegEmail" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="nama@email.com" android:inputType="textEmailAddress" android:layout_marginTop="4dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Nomor HP" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/grey"
+                        android:layout_marginTop="14dp" />
+                    <EditText android:id="@+id/etRegPhone" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="+62 812 xxxx xxxx" android:inputType="phone" android:layout_marginTop="4dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Kata Sandi" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/grey"
+                        android:layout_marginTop="14dp" />
+                    <EditText android:id="@+id/etRegPassword" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Min. 8 karakter" android:inputType="textPassword" android:layout_marginTop="4dp" />
+
+                    <TextView android:id="@+id/tvRegError" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Semua data wajib diisi" android:textColor="#FF0000"
+                        android:visibility="gone" android:layout_marginTop="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRegister" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="BUAT AKUN" app:backgroundTint="@color/primary" android:layout_marginTop="20dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

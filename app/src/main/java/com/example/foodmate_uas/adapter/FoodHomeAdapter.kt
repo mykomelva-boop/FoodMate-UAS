@@ -10,7 +10,7 @@ import java.text.NumberFormat
 import java.util.Locale
 
 class FoodHomeAdapter(
-    private val items: List<Food>,
+    private var items: List<Food>,
     private val onClick: (Food) -> Unit
 ) : RecyclerView.Adapter<FoodHomeAdapter.ViewHolder>() {
 
@@ -30,6 +30,11 @@ class FoodHomeAdapter(
         if (food.imageRes != 0) holder.binding.ivFood.setImageResource(food.imageRes)
         else holder.binding.ivFood.setBackgroundColor(Color.parseColor(food.colorHex))
         holder.itemView.setOnClickListener { onClick(food) }
+    }
+
+    fun updateData(newItems: List<Food>) {
+        items = newItems
+        notifyDataSetChanged()
     }
 
     override fun getItemCount() = items.size
