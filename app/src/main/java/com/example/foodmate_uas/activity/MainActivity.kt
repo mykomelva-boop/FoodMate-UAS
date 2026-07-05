@@ -8,11 +8,13 @@ import com.example.foodmate_uas.fragment.CartFragment
 import com.example.foodmate_uas.fragment.HomeFragment
 import com.example.foodmate_uas.fragment.MenuFragment
 import com.example.foodmate_uas.fragment.ProfileFragment
+import com.example.foodmate_uas.repository.FoodRepository
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        FoodRepository.loadFromJson(this)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

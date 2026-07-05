@@ -22,13 +22,13 @@
         <activity android:name=".activity.MainActivity" android:exported="false" />
         <activity android:name=".activity.DetailActivity" android:exported="false" />
 
-        <receiver
-            android:name=".receiver.OrderReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.example.foodmate_uas.ORDER_SUCCESS" />
-            </intent-filter>
-        </receiver>
+            <receiver
+                android:name=".receiver.OrderReceiver"
+                android:exported="false">
+                <intent-filter>
+                    <action android:name="com.example.foodmate_uas.ORDER_SUCCESS" />
+                </intent-filter>
+            </receiver>
 
     </application>
-</manifest>
+</manifest>~
