@@ -1,5 +1,4 @@
-kotlin
-package com.foodmate.uas.fragment
+package com.example.foodmate_uas.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,10 +7,10 @@ import android.text.TextWatcher
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.foodmate.uas.activity.DetailActivity
-import com.foodmate.uas.adapter.FoodGridAdapter
-import com.foodmate.uas.databinding.FragmentMenuBinding
-import com.foodmate.uas.repository.FoodRepository
+import com.example.foodmate_uas.activity.DetailActivity
+import com.example.foodmate_uas.adapter.FoodGridAdapter
+import com.example.foodmate_uas.databinding.FragmentMenuBinding
+import com.example.foodmate_uas.repository.FoodRepository
 
 class MenuFragment : Fragment() {
     private var _binding: FragmentMenuBinding? = null

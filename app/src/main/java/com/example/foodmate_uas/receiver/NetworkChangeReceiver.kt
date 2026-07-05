@@ -1,4 +1,4 @@
-package com.foodmate.uas.receiver
+package com.example.foodmate_uas.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context

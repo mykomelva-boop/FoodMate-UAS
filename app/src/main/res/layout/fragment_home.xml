@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_header_rounded"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hi, User! 👋"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mau makan apa hari ini?"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🎁 Promo Spesial"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins"/>
+
+            <TextView android:id="@+id/tvPromoLoading" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Memuat promo..." android:layout_marginTop="4dp" android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPromo" android:layout_width="match_parent" android:layout_height="120dp"
+                android:layout_marginTop="8dp" android:orientation="horizontal" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🔥 Menu Populer"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPopular" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

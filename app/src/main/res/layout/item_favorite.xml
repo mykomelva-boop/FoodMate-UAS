@@ -15,11 +15,13 @@
         android:padding="12dp"
         android:gravity="center_vertical">
 
-        <View
-            android:id="@+id/viewColor"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@color/primary"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivFood"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:src="@color/primary"
+            app:shapeAppearanceOverlay="@style/RoundedImageStyle" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -32,9 +34,10 @@
                 android:id="@+id/tvName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins" />
 
             <TextView
                 android:id="@+id/tvPrice"

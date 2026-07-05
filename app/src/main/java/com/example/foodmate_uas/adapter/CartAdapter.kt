@@ -1,13 +1,13 @@
-kotlin
-package com.foodmate.uas.adapter
+package com.example.foodmate_uas.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.foodmate.uas.databinding.ItemCartBinding
-import com.foodmate.uas.model.CartItem
+import com.example.foodmate_uas.databinding.ItemCartBinding
+import com.example.foodmate_uas.model.CartItem
 import java.text.NumberFormat
 import java.util.Locale
+import android.graphics.Color
 
 class CartAdapter(
     private val items: List<CartItem>,
@@ -27,6 +27,8 @@ class CartAdapter(
         holder.binding.tvName.text = item.food.name
         holder.binding.tvQty.text = "x${item.qty}"
         holder.binding.tvSubtotal.text = "Rp$rupiah"
+        if (item.food.imageRes != 0) holder.binding.ivFood.setImageResource(item.food.imageRes)
+        else holder.binding.ivFood.setBackgroundColor(Color.parseColor(item.food.colorHex))
         holder.binding.btnRemove.setOnClickListener { onRemove(item) }
     }
 

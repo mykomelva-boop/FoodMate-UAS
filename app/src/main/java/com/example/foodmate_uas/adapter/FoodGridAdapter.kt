@@ -1,12 +1,11 @@
-kotlin
-package com.foodmate.uas.adapter
+package com.example.foodmate_uas.adapter
 
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.foodmate.uas.databinding.ItemFoodGridBinding
-import com.foodmate.uas.model.Food
+import com.example.foodmate_uas.databinding.ItemFoodGridBinding
+import com.example.foodmate_uas.model.Food
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -27,7 +26,8 @@ class FoodGridAdapter(
         val rupiah = NumberFormat.getNumberInstance(Locale("in", "ID")).format(food.price)
         holder.binding.tvName.text = food.name
         holder.binding.tvPrice.text = "Rp$rupiah"
-        holder.binding.viewColor.setBackgroundColor(Color.parseColor(food.colorHex))
+        if (food.imageRes != 0) holder.binding.ivFood.setImageResource(food.imageRes)
+        else holder.binding.ivFood.setBackgroundColor(Color.parseColor(food.colorHex))
         holder.itemView.setOnClickListener { onClick(food) }
     }
 

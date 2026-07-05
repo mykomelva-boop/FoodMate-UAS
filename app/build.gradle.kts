@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.foodmate.uas"
+    namespace = "com.example.foodmate_uas"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.foodmate.uas"
+        applicationId = "com.example.foodmate_uas"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -30,4 +30,5 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.fragment:fragment-ktx:1.8.1")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.cardview:cardview:1.0.0")
 }

@@ -1,4 +1,4 @@
-package com.foodmate.uas.fragment
+package com.example.foodmate_uas.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,12 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.foodmate.uas.R
-import com.foodmate.uas.activity.MainActivity
-import com.foodmate.uas.adapter.CartAdapter
-import com.foodmate.uas.databinding.FragmentCartBinding
-import com.foodmate.uas.db.DatabaseHelper
-import com.foodmate.uas.util.CartManager
+import com.example.foodmate_uas.R
+import com.example.foodmate_uas.activity.MainActivity
+import com.example.foodmate_uas.adapter.CartAdapter
+import com.example.foodmate_uas.databinding.FragmentCartBinding
+import com.example.foodmate_uas.db.DatabaseHelper
+import com.example.foodmate_uas.util.CartManager
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -64,7 +64,7 @@ class CartFragment : Fragment() {
         renderCart()
         Toast.makeText(requireContext(), "Pesanan berhasil dibuat", Toast.LENGTH_SHORT).show()
 
-        val broadcastIntent = Intent("com.foodmate.uas.ORDER_SUCCESS").apply {
+        val broadcastIntent = Intent("com.example.foodmate_uas.ORDER_SUCCESS").apply {
             setPackage(requireContext().packageName)
             putExtra("total_price", total)
         }

@@ -1,15 +1,15 @@
-package com.foodmate.uas.activity
+package com.example.foodmate_uas.activity
 
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.foodmate.uas.R
-import com.foodmate.uas.databinding.ActivityDetailBinding
-import com.foodmate.uas.db.DatabaseHelper
-import com.foodmate.uas.model.Favorite
-import com.foodmate.uas.repository.FoodRepository
-import com.foodmate.uas.util.CartManager
+import com.example.foodmate_uas.R
+import com.example.foodmate_uas.databinding.ActivityDetailBinding
+import com.example.foodmate_uas.db.DatabaseHelper
+import com.example.foodmate_uas.model.Favorite
+import com.example.foodmate_uas.repository.FoodRepository
+import com.example.foodmate_uas.util.CartManager
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -34,7 +34,8 @@ class DetailActivity : AppCompatActivity() {
         binding.tvCategory.text = food.category
         binding.tvDescription.text = food.description
         binding.tvPrice.text = "Rp$rupiah"
-        binding.viewColor.setBackgroundColor(Color.parseColor(food.colorHex))
+        if (food.imageRes != 0) binding.ivFood.setImageResource(food.imageRes)
+        else binding.ivFood.setBackgroundColor(Color.parseColor(food.colorHex))
         updateFavoriteIcon(dbHelper.isFavorite(food.id))
 
         binding.btnBack.setOnClickListener { finish() }

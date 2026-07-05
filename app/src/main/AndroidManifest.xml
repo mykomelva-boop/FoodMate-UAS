@@ -25,7 +25,7 @@
             android:name=".receiver.OrderReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.foodmate.uas.ORDER_SUCCESS" />
+                <action android:name="com.example.foodmate_uas.ORDER_SUCCESS" />
             </intent-filter>
         </receiver>
 

@@ -1,7 +1,7 @@
-package com.foodmate.uas.util
+package com.example.foodmate_uas.util
 
-import com.foodmate.uas.model.CartItem
-import com.foodmate.uas.model.Food
+import com.example.foodmate_uas.model.CartItem
+import com.example.foodmate_uas.model.Food
 
 object CartManager {
     private val items = mutableListOf<CartItem>()

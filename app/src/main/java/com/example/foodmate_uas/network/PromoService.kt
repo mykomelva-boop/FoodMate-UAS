@@ -1,9 +1,9 @@
-package com.foodmate.uas.network
+package com.example.foodmate_uas.network
 
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
-import com.foodmate.uas.model.Promo
+import com.example.foodmate_uas.model.Promo
 import org.json.JSONArray
 import java.io.BufferedReader
 import java.io.InputStreamReader

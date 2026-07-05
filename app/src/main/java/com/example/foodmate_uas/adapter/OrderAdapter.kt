@@ -1,11 +1,10 @@
-kotlin
-package com.foodmate.uas.adapter
+package com.example.foodmate_uas.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.foodmate.uas.databinding.ItemOrderBinding
-import com.foodmate.uas.model.Order
+import com.example.foodmate_uas.databinding.ItemOrderBinding
+import com.example.foodmate_uas.model.Order
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -21,9 +20,9 @@ class OrderAdapter(private val items: List<Order>) : RecyclerView.Adapter<OrderA
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val order = items[position]
         val rupiah = NumberFormat.getNumberInstance(Locale("in", "ID")).format(order.totalPrice)
-        holder.binding.tvItems.text = order.itemsSummary
-        holder.binding.tvTotal.text = "Rp$rupiah"
-        holder.binding.tvDate.text = order.date
+        holder.binding.tvOrderItems.text = order.itemsSummary
+        holder.binding.tvOrderTotal.text = "Rp$rupiah"
+        holder.binding.tvOrderDate.text = order.date
     }
 
     override fun getItemCount() = items.size

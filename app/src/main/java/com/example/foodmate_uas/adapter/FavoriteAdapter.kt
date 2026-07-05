@@ -1,12 +1,12 @@
-kotlin
-package com.foodmate.uas.adapter
+package com.example.foodmate_uas.adapter
 
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.foodmate.uas.databinding.ItemFavoriteBinding
-import com.foodmate.uas.model.Favorite
+import com.example.foodmate_uas.databinding.ItemFavoriteBinding
+import com.example.foodmate_uas.model.Favorite
+import com.example.foodmate_uas.repository.FoodRepository
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -27,7 +27,9 @@ class FavoriteAdapter(
         val rupiah = NumberFormat.getNumberInstance(Locale("in", "ID")).format(fav.price)
         holder.binding.tvName.text = fav.name
         holder.binding.tvPrice.text = "Rp$rupiah"
-        holder.binding.viewColor.setBackgroundColor(Color.parseColor(fav.colorHex))
+        val imageRes = FoodRepository.getById(fav.foodId)?.imageRes ?: 0
+        if (imageRes != 0) holder.binding.ivFood.setImageResource(imageRes)
+        else holder.binding.ivFood.setBackgroundColor(Color.parseColor(fav.colorHex))
         holder.itemView.setOnClickListener { onClick(fav) }
     }
 

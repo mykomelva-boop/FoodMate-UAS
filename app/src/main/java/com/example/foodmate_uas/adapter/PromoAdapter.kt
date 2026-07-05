@@ -1,11 +1,10 @@
-kotlin
-package com.foodmate.uas.adapter
+package com.example.foodmate_uas.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.foodmate.uas.databinding.ItemPromoBinding
-import com.foodmate.uas.model.Promo
+import com.example.foodmate_uas.databinding.ItemPromoBinding
+import com.example.foodmate_uas.model.Promo
 
 class PromoAdapter(private val items: List<Promo>) : RecyclerView.Adapter<PromoAdapter.ViewHolder>() {
 
@@ -18,8 +17,8 @@ class PromoAdapter(private val items: List<Promo>) : RecyclerView.Adapter<PromoA
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val promo = items[position]
-        holder.binding.tvTitle.text = promo.title
-        holder.binding.tvDescription.text = promo.description
+        holder.binding.tvPromoTitle.text = promo.title
+        holder.binding.tvPromoDescription.text = promo.description
         holder.binding.tvDiscount.text = promo.discount
     }
 

@@ -23,7 +23,8 @@
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tvDiscount"/>
+            app:layout_constraintEnd_toStartOf="@id/tvDiscount"
+            android:fontFamily="@font/poppins" />
 
         <TextView
             android:id="@+id/tvPromoDescription"
@@ -45,7 +46,8 @@
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/poppins" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

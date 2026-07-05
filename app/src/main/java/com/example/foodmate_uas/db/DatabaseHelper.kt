@@ -1,11 +1,11 @@
-package com.foodmate.uas.db
+package com.example.foodmate_uas.db
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.foodmate.uas.model.Favorite
-import com.foodmate.uas.model.Order
+import com.example.foodmate_uas.model.Favorite
+import com.example.foodmate_uas.model.Order
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
 
